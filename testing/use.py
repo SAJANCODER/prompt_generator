@@ -17,15 +17,15 @@ class PromptGenerator:
         """
         Load user profiles from a JSON file.
         """
-        if os.path.exists("user_profiles.json"):
-            with open("user_profiles.json", "r") as file:
+        if os.path.exists("../user/user_profiles.json"):
+            with open("../user/user_profiles.json", "r") as file:
                 self.user_profiles = json.load(file)
 
     def save_user_profiles(self):
         """
         Save user profiles to a JSON file.
         """
-        with open("user_profiles.json", "w") as file:
+        with open("../user/user_profiles.json", "w") as file:
             json.dump(self.user_profiles, file, indent=4)
 
     def analyze_input(self, user_input):

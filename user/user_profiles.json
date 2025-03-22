@@ -36,5 +36,19 @@
                 "response": "Here's an overview: Explore general in a neutral way, highlighting interesting facts, insights, and real-world applications. Focus on the following: quit.. This topic covers a wide range of ideas and concepts."
             }
         ]
+    },
+    "1976": {
+        "preferences": {
+            "tone": "neutral",
+            "context": "general",
+            "intent": "learn"
+        },
+        "history": [
+            {
+                "input": "i need to learn about ml algoriths",
+                "prompt": "Provide a comprehensive explanation of general, covering all key concepts and practical examples. Ensure the explanation is neutral and easy to understand. Focus on the following: algoriths.",
+                "response": "Here's a detailed explanation based on your request: Provide a comprehensive explanation of general, covering all key concepts and practical examples. Ensure the explanation is neutral and easy to understand. Focus on the following: algoriths.. For example, machine learning involves algorithms that improve automatically through experience. Key concepts include supervised learning, unsupervised learning, and reinforcement learning. Practical examples include image recognition, natural language processing, and recommendation systems."
+            }
+        ]
     }
 }
