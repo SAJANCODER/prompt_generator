@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Under%20Development-yellow" alt="Status: Under Development">
   <img src="https://img.shields.io/badge/Language-Python-blue" alt="Language: Python">
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License: MIT">
+  
 </p>
 
 <h1 align="center" style="color: grey;">This is an UnderGoing Project</h1>
@@ -21,11 +21,6 @@
 - [Introduction](#-introduction)
 - [Features](#-features)
 - [Installation](#-installation)
-- [Usage](#-usage)
-- [Examples](#-examples)
-- [Contributing](#-contributing)
-- [License](#-license)
-
 ---
 
 ## 🚀 Introduction
@@ -64,4 +59,4 @@ The **AI-Powered Prompt Generator** is a tool designed to assist users in creati
    ```bash
    python use.py
 
-   <p align="center"> Made with ❤️ by <strong>SAJAN D</strong> </p>
+ <p align="center"> Made with ❤️ by <strong>SAJAN D</strong> </p>
