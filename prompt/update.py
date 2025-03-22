@@ -7,7 +7,7 @@ from fuzzywuzzy import process  # For fuzzy matching
 
 class PromptGenerator:
     def __init__(self):
-        # Predefined rules for intent recognition and prompt structuring
+
         self.intent_keywords = {
             "learn": ["learn", "teach", "explain", "understand", "know"],
             "create": ["write", "create", "make", "compose", "design"],
@@ -31,17 +31,17 @@ class PromptGenerator:
             "creative": ["creative", "imaginative", "artistic"]
         }
 
-        # Custom sentiment analysis (basic rule-based)
+
         self.sentiment_words = {
             "positive": ["good", "great", "awesome", "amazing", "love"],
             "negative": ["bad", "terrible", "awful", "hate", "dislike"]
         }
 
-        # User profiles storage
+
         self.user_profiles = {}
         self.load_user_profiles()
 
-        # Custom stopwords list
+
         self.stopwords = self._get_stopwords()
 
     def load_user_profiles(self):
@@ -77,24 +77,24 @@ class PromptGenerator:
         for intent, keywords in self.intent_keywords.items():
             if any(keyword in user_input.lower() for keyword in keywords):
                 return intent
-        return "explore"  # Default intent if no specific intent is found
+        return "explore"
 
     def _identify_context(self, user_input):
         """
         Identify the context of the user's input using fuzzy matching.
         """
-        # Flatten the context_keywords dictionary into a list of phrases
+
         all_phrases = [phrase for phrases in self.context_keywords.values() for phrase in phrases]
 
-        # Use fuzzy matching to find the best match
+
         best_match, score = process.extractOne(user_input.lower(), all_phrases)
 
-        # If the match score is above a threshold, return the corresponding context
-        if score > 70:  # Adjust threshold as needed
+
+        if score > 70:
             for context, phrases in self.context_keywords.items():
                 if best_match in phrases:
                     return context
-        return "general"  # Default context if no specific context is found
+        return "general"
 
     def _identify_tone(self, user_input):
         """
@@ -103,7 +103,7 @@ class PromptGenerator:
         for tone, keywords in self.tone_keywords.items():
             if any(keyword.lower() in user_input.lower() for keyword in keywords):
                 return tone
-        return "neutral"  # Default tone if no specific tone is found
+        return "neutral"
 
     def _analyze_sentiment(self, user_input):
         """
@@ -123,7 +123,7 @@ class PromptGenerator:
         Extract key entities (nouns) from the user's input, excluding stopwords and irrelevant words.
         """
         words = re.findall(r'\b\w+\b', user_input)
-        # Focus on meaningful keywords
+
         meaningful_words = [word for word in words if word.lower() not in self.stopwords and len(word) > 2]
         return meaningful_words
 
@@ -140,7 +140,7 @@ class PromptGenerator:
         """
         prompt = ""
 
-        # Define prompt templates based on intent
+
         if intent == "learn":
             prompt = f"Provide a comprehensive explanation of {context}, covering all key concepts and practical examples. Ensure the explanation is {tone} and easy to understand."
         elif intent == "create":
@@ -152,7 +152,7 @@ class PromptGenerator:
         else:
             prompt = f"Provide a {tone} overview of {context}, covering key aspects and examples."
 
-        # Add sentiment and entities to the prompt
+
         if sentiment != "neutral":
             prompt += f" The response should have a {sentiment} tone."
         if entities:
@@ -180,30 +180,30 @@ class PromptGenerator:
                 self.save_user_profiles()
                 break
 
-            # Analyze the input
+
             intent, context, tone, sentiment, entities = self.analyze_input(user_input)
 
-            # Update user preferences based on the current input
+
             user_profile["preferences"]["tone"] = tone
             user_profile["preferences"]["context"] = context
             user_profile["preferences"]["intent"] = intent
 
-            # Generate the initial prompt
+
             prompt = self.generate_prompt(intent, context, tone, sentiment, entities)
             print(f"\nGenerated Prompt: {prompt}")
 
-            # Simulate generative AI response
+
             ai_response = self.simulate_ai_response(prompt)
             print(f"\nAI Response: {ai_response}")
 
-            # Save interaction history
+
             user_profile["history"].append({"input": user_input, "prompt": prompt, "response": ai_response})
 
     def simulate_ai_response(self, prompt):
         """
         Simulate a generative AI response (for testing purposes).
         """
-        # Simulate a detailed response based on the prompt
+
         if "Provide a comprehensive explanation" in prompt:
             return f"Here's a detailed explanation based on your request: {prompt}. For example, machine learning involves algorithms that improve automatically through experience. Key concepts include supervised learning, unsupervised learning, and reinforcement learning. Practical examples include image recognition, natural language processing, and recommendation systems."
         elif "Write a" in prompt:
@@ -213,11 +213,7 @@ class PromptGenerator:
         else:
             return f"Here's an overview: {prompt}. This topic covers a wide range of ideas and concepts."
 
-
-# Run the Prompt Generator with User Profiles
 if __name__ == "__main__":
     generator = PromptGenerator()
-
-    # Simulate user interaction
     user_id = input("Enter your user ID: ").strip()
     generator.interact_with_user(user_id)
