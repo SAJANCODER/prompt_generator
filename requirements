@@ -2,3 +2,5 @@ These Under Mentioned Library Need to be Installed:
     python-Levenshtein
     fuzzywuzzy
     spellchecker
+    spacy
+    spacy.cli import download as spacy_download
