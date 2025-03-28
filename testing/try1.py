@@ -8,6 +8,7 @@ import spacy
 from datetime import datetime
 from spacy.cli import download as spacy_download
 import warnings
+import math
 
 
 class MasterPromptEngineer:
@@ -94,7 +95,83 @@ class MasterPromptEngineer:
                 "tools": ["Django", "FastAPI", "PyTorch", "Pandas"],
                 "subtleties": ["GIL limitations", "duck typing edge cases", "circular imports"]
             },
-            # ... (rest of the knowledge graph remains the same)
+            "java": {
+                "levels": {
+                    "beginner": ["syntax", "classes", "inheritance", "interfaces"],
+                    "intermediate": ["collections", "streams", "concurrency basics", "JVM"],
+                    "advanced": ["bytecode manipulation", "GC tuning", "JNI", "performance optimization"],
+                    "expert": ["JVM internals", "low-latency systems", "distributed JVM", "security exploits"]
+                },
+                "paradigms": ["OOP", "functional"],
+                "use_cases": ["enterprise", "Android", "backend", "big data"],
+                "tools": ["Spring", "Hibernate", "Maven", "Kafka"],
+                "subtleties": ["JVM quirks", "memory leaks", "classloader issues"]
+            },
+            # === Specialized Languages ===
+            "r": {
+                "levels": {
+                    "beginner": ["vectors", "data frames", "basic stats"],
+                    "intermediate": ["dplyr", "ggplot2", "statistical modeling"],
+                    "advanced": ["S3/S4 systems", "Rcpp", "performance optimization"],
+                    "expert": ["language internals", "memory management", "CRAN ecosystem"]
+                },
+                "paradigms": ["functional", "vectorized"],
+                "use_cases": ["statistics", "data visualization", "bioinformatics"],
+                "tools": ["tidyverse", "shiny", "rmarkdown"],
+                "subtleties": ["lazy evaluation", "environment quirks", "S3/S4 dispatch"]
+            },
+            # === Emerging Languages ===
+            "rust": {
+                "levels": {
+                    "beginner": ["ownership", "borrowing", "traits"],
+                    "intermediate": ["lifetimes", "unsafe", "macros"],
+                    "advanced": ["FFI", "embedded", "compiler plugins"],
+                    "expert": ["type system extensions", "formal verification", "language design"]
+                },
+                "paradigms": ["systems", "functional"],
+                "use_cases": ["systems programming", "WASM", "blockchain"],
+                "tools": ["Cargo", "Actix", "Tokio"],
+                "subtleties": ["borrow checker edge cases", "unsafe interactions", "FFI complexities"]
+            },
+            # === Theoretical Foundations ===
+            "algorithms": {
+                "levels": {
+                    "beginner": ["sorting", "searching", "Big-O"],
+                    "intermediate": ["graphs", "dynamic programming", "divide-and-conquer"],
+                    "advanced": ["approximation", "randomized", "parallel"],
+                    "expert": ["quantum", "parameterized", "computational geometry"]
+                },
+                "paradigms": ["imperative", "recursive"],
+                "use_cases": ["problem solving", "optimization", "AI"],
+                "tools": ["pseudocode", "visualization", "proof techniques"],
+                "subtleties": ["constant factors", "cache behavior", "hidden assumptions"]
+            },
+            # === AI/ML Domain ===
+            "machine learning": {
+                "levels": {
+                    "beginner": ["linear regression", "k-NN", "basic sklearn"],
+                    "intermediate": ["neural networks", "SVM", "hyperparameter tuning"],
+                    "advanced": ["attention", "GANs", "RL"],
+                    "expert": ["theoretical limits", "novel architectures", "AI safety"]
+                },
+                "paradigms": ["supervised", "unsupervised", "reinforcement"],
+                "use_cases": ["prediction", "generation", "classification"],
+                "tools": ["TensorFlow", "PyTorch", "scikit-learn"],
+                "subtleties": ["overfitting", "bias-variance", "adversarial examples"]
+            },
+            # === Systems Programming ===
+            "operating systems": {
+                "levels": {
+                    "beginner": ["processes", "threads", "memory basics"],
+                    "intermediate": ["scheduling", "paging", "file systems"],
+                    "advanced": ["distributed", "real-time", "kernel hacking"],
+                    "expert": ["formal verification", "security proofs", "novel architectures"]
+                },
+                "paradigms": ["systems", "concurrent"],
+                "use_cases": ["performance", "security", "reliability"],
+                "tools": ["Linux", "QEMU", "gdb"],
+                "subtleties": ["race conditions", "deadlocks", "memory ordering"]
+            }
         }
 
     def _load_data(self) -> None:
@@ -130,6 +207,47 @@ class MasterPromptEngineer:
 
         except Exception as e:
             warnings.warn(f"Could not save data: {str(e)}")
+
+    def _calculate_query_complexity(self, doc) -> float:
+        """Calculate a comprehensive complexity score for the user query (0-1 scale)."""
+        if not doc.text.strip():
+            return 0.0
+
+        # Linguistic complexity
+        syntactic_complexity = self._calculate_syntax_complexity(doc.text)
+
+        # Conceptual complexity
+        concept_count = len([t for t in doc if t.text in self.tech_lexicon])
+        normalized_concepts = min(concept_count / 5, 1.0)  # max 5 concepts = 1.0
+
+        # Structural complexity
+        sentence_count = len(list(doc.sents))
+        clause_count = sum(1 for token in doc if token.dep_ in ("advcl", "relcl", "ccomp", "xcomp"))
+        structural_score = min((sentence_count * 0.3 + clause_count * 0.7) / 5, 1.0)
+
+        # Depth indicators
+        depth_terms = sum(1 for t in doc if t.text.lower() in {
+            "advanced", "expert", "deep", "complex", "optimize",
+            "internals", "low-level", "theory", "fundamental"
+        })
+        depth_score = min(depth_terms / 3, 1.0)
+
+        # Combine factors with weighting
+        weights = {
+            'syntax': 0.3,
+            'concepts': 0.4,
+            'structure': 0.2,
+            'depth': 0.1
+        }
+
+        total_score = (
+                weights['syntax'] * syntactic_complexity +
+                weights['concepts'] * normalized_concepts +
+                weights['structure'] * structural_score +
+                weights['depth'] * depth_score
+        )
+
+        return min(max(total_score, 0.0), 1.0)
 
     def _analyze_with_expertise(self, user_input: str) -> Dict[str, Any]:
         """Perform master-level technical analysis with multi-dimensional assessment."""
@@ -226,7 +344,7 @@ class MasterPromptEngineer:
                           else ["literature", "kinesthetic"])
 
         return {
-            "primary_topic": objectives[0]["concept"] if objectives else None,
+            "primary_topic": objectives[0]["concept"] if objectives else "general knowledge",
             "detailed_concepts": objectives,
             "depth_level": depth,
             "learning_style": learning_style,
