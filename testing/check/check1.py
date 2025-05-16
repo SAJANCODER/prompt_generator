@@ -13,6 +13,7 @@ from datetime import datetime, timedelta
 from spacy.cli import download as spacy_download
 import warnings
 import math
+import sys
 
 class MasterPromptEngineer:
     def __init__(self):
@@ -1164,7 +1165,7 @@ Structure the explanation as:
 
         return prompt
 
-    def _update_expert_knowledge(self, user_id: str, user_input: str, prompt: str, analysis: Dict[str, Any]) -> None:
+    def _update_expert_knowledge(self, user_id: int, user_input: str, prompt: str, analysis: Dict[str, Any]) -> None:
         """Update the expert knowledge base with new interaction."""
         entry = {
             "timestamp": datetime.now().isoformat(),
@@ -1191,7 +1192,9 @@ Structure the explanation as:
 
     def interact(self):
         """Master-level interaction loop."""
-        user_id = input("Enter your expert ID: ").strip() or "expert_user"
+        user_id = input("Enter your expert ID: ").strip()
+        if not user_id:
+          sys.exit("id not entered!!!")
 
         print(f"\nWelcome to Master Prompt Engineering System, {user_id}!")
         print("This system generates world-class learning prompts using expert techniques.\n")

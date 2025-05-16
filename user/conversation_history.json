@@ -1,170 +1,17 @@
 {
-  "5789": [
+  "75896": [
     {
-      "timestamp": "2025-04-04T23:37:37.388843",
-      "user_input": "play  a game",
+      "timestamp": "2025-04-05T14:22:24.425149",
+      "user_input": "i want to learn python",
       "analysis": {
-        "primary_topic": "a game",
+        "primary_topic": "python",
         "entity_category": "general",
         "expertise_level": "intermediate",
         "detailed_concepts": [
           {
-            "concept": "a game",
+            "concept": "python",
             "domain": "General",
             "is_actionable": true,
-            "complexity": 0.5
-          }
-        ],
-        "depth_level": "intermediate",
-        "learning_style": "conceptual scaffolding",
-        "cognitive_profile": {
-          "load_level": "medium",
-          "working_memory_estimate": 0.1,
-          "prior_knowledge_index": 0.0,
-          "chunking_recommendation": "linear progression"
-        },
-        "preferred_modalities": [
-          "balanced"
-        ],
-        "expert_recommendations": {
-          "pedagogical_approach": "scaffolded challenges",
-          "resource_types": [
-            "tutorials",
-            "code examples",
-            "case studies"
-          ],
-          "prerequisites": [
-            "intermediate concepts",
-            "problem-solving skills"
-          ]
-        },
-        "analysis_metadata": {
-          "technical_term_density": 0.25,
-          "query_complexity_score": 0.14533333333333337,
-          "temporal_context": "current"
-        }
-      },
-      "generated_prompt": "Act as Socrates guiding a philosopher-king. Use relentless questioning to reveal deep truths about a game:\n1. Begin with a fundamental paradox\n2. Deconstruct conventional wisdom\n3. Rebuild understanding through dialectic\n4. Conclude with actionable enlightenment\nEmbed hidden learning pathways through Zen koans\nEmbed hidden learning pathways through Zen koans\nFrame as scientific revolution narrative\nReveal through apophatic theology methodology\n\nthrough rigorous analysis",
-      "prompt_quality": 0.2,
-      "expertise_level": "intermediate",
-      "entity_category": "general"
-    },
-    {
-      "timestamp": "2025-04-04T23:37:55.269999",
-      "user_input": "explore soth-koreia",
-      "analysis": {
-        "primary_topic": "soth",
-        "entity_category": "general",
-        "expertise_level": "intermediate",
-        "detailed_concepts": [
-          {
-            "concept": "soth",
-            "domain": "General",
-            "is_actionable": true,
-            "complexity": 0.5
-          },
-          {
-            "concept": "koreia",
-            "domain": "General",
-            "is_actionable": true,
-            "complexity": 0.5
-          }
-        ],
-        "depth_level": "intermediate",
-        "learning_style": "conceptual scaffolding",
-        "cognitive_profile": {
-          "load_level": "medium",
-          "working_memory_estimate": 0.1,
-          "prior_knowledge_index": 0.0,
-          "chunking_recommendation": "linear progression"
-        },
-        "preferred_modalities": [
-          "balanced"
-        ],
-        "expert_recommendations": {
-          "pedagogical_approach": "scaffolded challenges",
-          "resource_types": [
-            "tutorials",
-            "code examples",
-            "case studies"
-          ],
-          "prerequisites": [
-            "intermediate concepts",
-            "problem-solving skills"
-          ]
-        },
-        "analysis_metadata": {
-          "technical_term_density": 0.25,
-          "query_complexity_score": 0.16533333333333336,
-          "temporal_context": "current"
-        }
-      },
-      "generated_prompt": "Act as Socrates guiding a philosopher-king. Use relentless questioning to reveal deep truths about soth:\n1. Begin with a fundamental paradox\n2. Deconstruct conventional wisdom\n3. Rebuild understanding through dialectic\n4. Conclude with actionable enlightenment\nAdd layers of abstraction connecting to emergence\nFrame as hero's journey narrative\nIntroduce multi-disciplinary perspectives from digital humanities\nAdd layers of abstraction connecting to systems theory\n\nthrough rigorous analysis",
-      "prompt_quality": 0.8,
-      "expertise_level": "intermediate",
-      "entity_category": "general"
-    },
-    {
-      "timestamp": "2025-04-04T23:38:05.541682",
-      "user_input": "learn india",
-      "analysis": {
-        "primary_topic": "india",
-        "entity_category": "general",
-        "expertise_level": "intermediate",
-        "detailed_concepts": [
-          {
-            "concept": "india",
-            "domain": "General",
-            "is_actionable": true,
-            "complexity": 0.5
-          }
-        ],
-        "depth_level": "intermediate",
-        "learning_style": "conceptual scaffolding",
-        "cognitive_profile": {
-          "load_level": "medium",
-          "working_memory_estimate": 0.1,
-          "prior_knowledge_index": 0.0,
-          "chunking_recommendation": "linear progression"
-        },
-        "preferred_modalities": [
-          "balanced"
-        ],
-        "expert_recommendations": {
-          "pedagogical_approach": "scaffolded challenges",
-          "resource_types": [
-            "tutorials",
-            "code examples",
-            "case studies"
-          ],
-          "prerequisites": [
-            "intermediate concepts",
-            "problem-solving skills"
-          ]
-        },
-        "analysis_metadata": {
-          "technical_term_density": 0.5,
-          "query_complexity_score": 0.11866666666666668,
-          "temporal_context": "current"
-        }
-      },
-      "generated_prompt": "Act as Socrates guiding a philosopher-king. Use relentless questioning to reveal deep truths about india:\n1. Begin with a fundamental paradox\n2. Deconstruct conventional wisdom\n3. Rebuild understanding through dialectic\n4. Conclude with actionable enlightenment\nIntroduce multi-disciplinary perspectives from quantum biology\nEmbed hidden learning pathways through Zen koans\nFrame as creation myth narrative",
-      "prompt_quality": 0.4,
-      "expertise_level": "intermediate",
-      "entity_category": "general"
-    },
-    {
-      "timestamp": "2025-04-04T23:38:16.460123",
-      "user_input": "who is modi-gi",
-      "analysis": {
-        "primary_topic": "modi",
-        "entity_category": "general",
-        "expertise_level": "intermediate",
-        "detailed_concepts": [
-          {
-            "concept": "modi",
-            "domain": "General",
-            "is_actionable": false,
             "complexity": 0.5
           }
         ],
@@ -172,7 +19,7 @@
         "learning_style": "conceptual scaffolding",
         "cognitive_profile": {
           "load_level": "medium",
-          "working_memory_estimate": 0.0,
+          "working_memory_estimate": 0.25,
           "prior_knowledge_index": 0.0,
           "chunking_recommendation": "linear progression"
         },
@@ -187,19 +34,68 @@
             "interactive exercises"
           ],
           "prerequisites": [
-            "intermediate concepts",
-            "problem-solving skills"
+            "problem-solving skills",
+            "intermediate concepts"
           ]
         },
         "analysis_metadata": {
-          "technical_term_density": 0.0,
-          "query_complexity_score": 0.10866666666666666,
+          "technical_term_density": 0.2,
+          "query_complexity_score": 0.2166666666666667,
           "temporal_context": "current"
         }
       },
-      "generated_prompt": "As a world-class expert with decades of experience in modi, create an elite learning resource that:\n[Contextual Foundation]\n- Targets surface understanding level\n- Incorporates medium cognitive complexity\n- Uses conceptual scaffolding pedagogical approach\n- Focused on general domain\n[Technical Depth]\n- Cover these core aspects: core principles and advanced applications\n- Include advanced techniques: domain-specific advanced methods\n- Address these subtle complexities: hidden complexities, conceptual blind spots, implementation pitfalls\n[Expert Delivery]\n- Employ these master techniques: metacognitive prompting, few-shot learning, conceptual scaffolding\n- Structure with: ['balanced']\n- Include nuanced examples demonstrating:\n* Real-world implementation challenges\n* Professional-grade solutions\n* Cutting-edge applications\nFrame as creation myth narrative\nAdd layers of abstraction connecting to emergence\nEmbed hidden learning pathways through constraint-based creativity\n\nvia masterful exposition",
-      "prompt_quality": 1.0,
+      "generated_prompt": "As a world-class expert with decades of experience in python, create an elite learning resource that:\n[Contextual Foundation]\n- Targets surface understanding level\n- Incorporates medium cognitive complexity\n- Uses conceptual scaffolding pedagogical approach\n- Focused on general domain\n[Technical Depth]\n- Cover these core aspects: syntax, loops, functions, OOP basics\n- Include advanced techniques: performance profiling, asynchronous programming, C extensions\n- Address these subtle complexities: duck typing edge cases, circular imports, GIL limitations\n[Expert Delivery]\n- Employ these master techniques: chain-of-thought prompting, metacognitive prompting, Socratic questioning\n- Structure with: ['balanced']\n- Include nuanced examples demonstrating:\n* Real-world implementation challenges\n* Professional-grade solutions\n* Cutting-edge applications\nCreate conceptual tension between deterministic/stochastic\nEmbed hidden learning pathways through Socratic irony\nIntroduce multi-disciplinary perspectives from digital humanities\nCreate conceptual tension between reductionist/holistic",
+      "prompt_quality": 0.6,
       "expertise_level": "surface",
+      "entity_category": "general"
+    },
+    {
+      "timestamp": "2025-04-05T14:22:44.183047",
+      "user_input": "how to learn vlsi",
+      "analysis": {
+        "primary_topic": "vlsi",
+        "entity_category": "general",
+        "expertise_level": "intermediate",
+        "detailed_concepts": [
+          {
+            "concept": "vlsi",
+            "domain": "General",
+            "is_actionable": true,
+            "complexity": 0.5
+          }
+        ],
+        "depth_level": "intermediate",
+        "learning_style": "conceptual scaffolding",
+        "cognitive_profile": {
+          "load_level": "medium",
+          "working_memory_estimate": 0.1,
+          "prior_knowledge_index": 0.0,
+          "chunking_recommendation": "linear progression"
+        },
+        "preferred_modalities": [
+          "balanced"
+        ],
+        "expert_recommendations": {
+          "pedagogical_approach": "scaffolded challenges",
+          "resource_types": [
+            "tutorials",
+            "code examples",
+            "case studies"
+          ],
+          "prerequisites": [
+            "problem-solving skills",
+            "intermediate concepts"
+          ]
+        },
+        "analysis_metadata": {
+          "technical_term_density": 0.25,
+          "query_complexity_score": 0.16533333333333336,
+          "temporal_context": "current"
+        }
+      },
+      "generated_prompt": "As a world-class expert with decades of experience in vlsi, create an elite learning resource that:\n[Contextual Foundation]\n- Targets intermediate understanding level\n- Incorporates medium cognitive complexity\n- Uses conceptual scaffolding pedagogical approach\n- Focused on general domain\n[Technical Depth]\n- Cover these core aspects: core principles and advanced applications\n- Include advanced techniques: domain-specific advanced methods\n- Address these subtle complexities: implementation pitfalls, hidden complexities, conceptual blind spots\n[Expert Delivery]\n- Employ these master techniques: metacognitive prompting, analogical reasoning, few-shot learning\n- Structure with: ['balanced']\n- Include nuanced examples demonstrating:\n* Real-world implementation challenges\n* Professional-grade solutions\n* Cutting-edge applications\nCreate conceptual tension between reductionist/holistic\nIncorporate opposing viewpoints from post-structuralism\nFrame as hero's journey narrative",
+      "prompt_quality": 0.8,
+      "expertise_level": "intermediate",
       "entity_category": "general"
     }
   ]
