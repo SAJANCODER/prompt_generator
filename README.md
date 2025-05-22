@@ -4,7 +4,7 @@
   
 </p>
 
-<h1 align="center" style="color: grey;">This is an UnderGoing Project</h1>
+<h1 align="center" style="color: grey;">A Powerfull Prompt Generator</h1>
 
 <p align="center">
   <strong>AI-Powered Prompt Generator</strong>
